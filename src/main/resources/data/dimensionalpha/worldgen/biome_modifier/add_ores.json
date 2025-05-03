@@ -1,0 +1,19 @@
+{
+  "type": "neoforge:add_features",
+
+  "biomes": "dimensionalpha:eg_surface",
+
+  "features": [
+    "dimensionalpha:ore_coal",
+    "dimensionalpha:ore_iron",
+    "dimensionalpha:ore_copper",
+    "dimensionalpha:ore_gold",
+    "dimensionalpha:ore_redstone",
+    "dimensionalpha:ore_diamond",
+    "dimensionalpha:ore_lapis",
+    "dimensionalpha:nether_quartz_ore",
+    "dimensionalpha:ancient_debris"
+  ],
+
+  "step": "underground_ores"
+}
