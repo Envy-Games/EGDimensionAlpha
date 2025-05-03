@@ -1,0 +1,22 @@
+{
+  "has_precipitation": false,
+  "category": "plains",
+  "temperature": 0.8,
+  "temperature_modifier": "none",
+  "downfall": 0.0,
+  "effects": {
+    "fog_color": 12638463,
+    "water_color": 4159204,
+    "water_fog_color": 329011,
+    "sky_color": 8103167
+  },
+  "player_spawn_friendly": false,
+  "spawn_costs": {},
+  "spawners": {},
+  "spawn_overrides": {},
+  "carvers": {
+    "air": [],
+    "liquid": []
+  },
+  "features": []
+}

@@ -1,0 +1,41 @@
+{
+  "type": "dimensionalpha:eg_dimension_alpha",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "layers": [
+        { "height": 1, "block": "minecraft:bedrock"    },
+        { "height": 5, "block": "minecraft:obsidian"   },
+        { "height": 10, "block": "minecraft:gravel"     },
+        { "height": 10, "block": "minecraft:andesite"   },
+        { "height": 10, "block": "minecraft:diorite"    },
+        { "height": 10, "block": "minecraft:granite"    },
+        { "height": 10, "block": "minecraft:sand"       },
+        { "height": 10, "block": "minecraft:red_sand"   },
+        { "height": 10, "block": "minecraft:calcite"    },
+        { "height": 5, "block": "minecraft:quartz_block" },
+        { "height": 5, "block": "minecraft:nether_quartz_ore" },
+        { "height": 10, "block": "minecraft:basalt"     },
+        { "height": 10, "block": "minecraft:blackstone" },
+        { "height": 10, "block": "minecraft:tuff"       },
+        { "height": 4, "block": "minecraft:red_terracotta" },
+        { "height": 4, "block": "minecraft:orange_terracotta" },
+        { "height": 4, "block": "minecraft:yellow_terracotta" },
+        { "height": 4, "block": "minecraft:brown_terracotta"  },
+        { "height": 4, "block": "minecraft:white_terracotta"  },
+        { "height": 4, "block": "minecraft:light_gray_terracotta" },
+        { "height": 4, "block": "minecraft:terracotta"     },
+        { "height": 50, "block": "minecraft:end_stone"    },
+        { "height": 50, "block": "minecraft:netherrack"   },
+        { "height": 50, "block": "minecraft:deepslate"    },
+        { "height": 50, "block": "minecraft:stone"        },
+        { "height": 1, "block": "minecraft:grass_block"   },
+        { "height": 39, "block": "minecraft:air"         }
+      ],
+      "biome":      "dimensionalpha:eg_surface",
+      "lakes":      false,
+      "features":   true,
+      "structures": {}
+    }
+  }
+}
