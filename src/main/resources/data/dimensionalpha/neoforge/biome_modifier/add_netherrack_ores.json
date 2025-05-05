@@ -1,0 +1,14 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_nether",
+  "step": "underground_ores",
+  "features": [
+    "dimensionalpha:netherrack_coal_ore_nether",
+    "dimensionalpha:netherrack_copper_ore_nether",
+    "dimensionalpha:netherrack_diamond_ore_nether",
+    "dimensionalpha:netherrack_emerald_ore_nether",
+    "dimensionalpha:netherrack_iron_ore_nether",
+    "dimensionalpha:netherrack_lapis_ore_nether",
+    "dimensionalpha:netherrack_redstone_ore_nether"
+  ]
+}

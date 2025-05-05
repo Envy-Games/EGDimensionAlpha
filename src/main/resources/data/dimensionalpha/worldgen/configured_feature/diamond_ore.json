@@ -28,7 +28,7 @@
           "tag": "minecraft:base_stone_nether"
         },
         "state": {
-          "Name": "minecraft:diamond_ore"
+          "Name": "dimensionalpha:netherrack_diamond_ore"
         }
       }
     ]

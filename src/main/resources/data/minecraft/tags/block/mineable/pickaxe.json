@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "dimensionalpha:netherrack_coal_ore",
+    "dimensionalpha:netherrack_copper_ore",
+    "dimensionalpha:netherrack_diamond_ore",
+    "dimensionalpha:netherrack_emerald_ore",
+    "dimensionalpha:netherrack_iron_ore",
+    "dimensionalpha:netherrack_lapis_ore",
+    "dimensionalpha:netherrack_redstone_ore"
+  ]
+}

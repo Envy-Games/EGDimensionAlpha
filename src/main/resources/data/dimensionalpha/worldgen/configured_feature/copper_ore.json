@@ -28,7 +28,7 @@
           "tag": "minecraft:base_stone_nether"
         },
         "state": {
-          "Name": "minecraft:copper_ore"
+          "Name": "dimensionalpha:netherrack_copper_ore"
         }
       }
     ]

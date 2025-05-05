@@ -28,7 +28,7 @@
           "tag": "minecraft:base_stone_nether"
         },
         "state": {
-          "Name": "minecraft:coal_ore"
+          "Name": "dimensionalpha:netherrack_coal_ore"
         }
       }
     ]

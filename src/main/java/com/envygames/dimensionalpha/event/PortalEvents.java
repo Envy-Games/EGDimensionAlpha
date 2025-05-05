@@ -1,106 +1,110 @@
 package com.envygames.dimensionalpha.event;
 
 import com.envygames.dimensionalpha.ModBlocks;
+import com.envygames.dimensionalpha.blockentity.TeleporterBlockEntity;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 
+import java.util.Objects;
+
 @EventBusSubscriber(modid = "dimensionalpha")
 public class PortalEvents {
-    private static final ResourceKey<Level> ALPHA_KEY =
-            ResourceKey.create(
-                    Registries.DIMENSION,
-                    // public factory instead of the private constructor
-                    ResourceLocation.parse("dimensionalpha:eg_dimension_alpha")
-            );
 
-    // NBT tag under which we'll stash the original Overworld pad coords
-    private static final String ORIGIN_DATA_TAG = "dimensionalpha:origin_pos";
+    private static final ResourceKey<Level> ALPHA_KEY = ResourceKey.create(
+            Registries.DIMENSION,
+            ResourceLocation.parse("dimensionalpha:eg_dimension_alpha")
+    );
 
     @SubscribeEvent
     public static void onRightClick(PlayerInteractEvent.RightClickBlock evt) {
-        // only main‐hand on server
-        if (evt.getHand() != InteractionHand.MAIN_HAND || evt.getLevel().isClientSide()) {
+        // only main‐hand, server side
+        if (evt.getHand() != InteractionHand.MAIN_HAND || evt.getLevel().isClientSide())
             return;
-        }
 
         BlockPos pos = evt.getPos();
         BlockState state = evt.getLevel().getBlockState(pos);
-        // only fire on your teleporter block
-        if (!state.is(ModBlocks.DIMENSION_ALPHA_TELEPORTER.get())) {
+        if (!state.is(ModBlocks.DIMENSION_ALPHA_TELEPORTER.get()))
             return;
+
+        ServerLevel here = (ServerLevel) evt.getLevel();
+        ServerPlayer player = (ServerPlayer) evt.getEntity();
+
+        TeleporterBlockEntity be = (TeleporterBlockEntity) here.getBlockEntity(pos);
+        if (be == null) return;
+
+        // pick the opposite dimension
+        ServerLevel dest = (here.dimension() == ALPHA_KEY)
+                ? here.getServer().getLevel(Level.OVERWORLD)
+                : here.getServer().getLevel(ALPHA_KEY);
+        if (dest == null) return;
+
+        // if not yet linked, place the partner pad & link
+        if (!be.isLinked()) {
+            BlockPos destPos;
+            if (dest.dimension() == ALPHA_KEY) {
+                // force pad at Y=270 in Alpha
+                destPos = new BlockPos(pos.getX(), 270, pos.getZ());
+            } else {
+                // use heightmap in Overworld
+                destPos = findTopSolidBlock(dest, pos.getX(), pos.getZ());
+            }
+
+            // place or replace the pad block
+            BlockState destState = dest.getBlockState(destPos);
+            if (!destState.is(ModBlocks.DIMENSION_ALPHA_TELEPORTER.get())) {
+                dest.setBlockAndUpdate(
+                        destPos,
+                        ModBlocks.DIMENSION_ALPHA_TELEPORTER.get().defaultBlockState()
+                );
+            }
+
+            // now safely fetch its block entity
+            TeleporterBlockEntity destBE =
+                    (TeleporterBlockEntity) dest.getBlockEntity(destPos);
+            if (destBE == null) return;
+
+            be.linkTo(dest.dimension(), destPos);
+            destBE.linkTo(here.dimension(), pos);
         }
 
-        ServerLevel current = (ServerLevel) evt.getLevel();
-        MinecraftServer server = current.getServer();
-        ResourceKey<Level> here = current.dimension();
-        // decide destination dimension
-        ServerLevel dest = (here == ALPHA_KEY)
-                ? server.getLevel(Level.OVERWORLD)
-                : server.getLevel(ALPHA_KEY);
+        // perform teleport: always stand one block above the pad
+        ServerLevel targetLevel = Objects.requireNonNull(player.getServer())
+                .getLevel(be.linkedDimension());
+        if (targetLevel == null) return;
 
-        if (dest == null) {
-            return;
-        }
+        BlockPos linkPos = be.linkedPosition();
+        double ty = linkPos.getY() + 1.0;
 
-        // ensure we have the server‐side player
-        if (!(evt.getEntity() instanceof ServerPlayer player)) {
-            return;
-        }
+        player.teleportTo(
+                targetLevel,
+                linkPos.getX() + 0.5,
+                ty,
+                linkPos.getZ() + 0.5,
+                player.getYRot(),
+                player.getXRot()
+        );
 
-        double targetX, targetY, targetZ;
-        CompoundTag allData = player.getPersistentData();
-        CompoundTag originData = allData.contains(ORIGIN_DATA_TAG)
-                ? allData.getCompound(ORIGIN_DATA_TAG)
-                : new CompoundTag();
-
-        if (here != ALPHA_KEY) {
-            // ───────────────────────────
-            // Overworld → Alpha:
-            //   • record the Overworld pad's BlockPos in NBT
-            //   • teleport into Alpha at Y=281, same X/Z
-            originData.putInt("x", pos.getX());
-            originData.putInt("y", pos.getY());
-            originData.putInt("z", pos.getZ());
-            allData.put(ORIGIN_DATA_TAG, originData);
-
-            targetX = pos.getX() + 0.5;
-            targetY = 281.0;             // one block above your Alpha pad at Y=280
-            targetZ = pos.getZ() + 0.5;
-        } else {
-            // ───────────────────────────
-            // Alpha → Overworld:
-            //   • pull back the saved pad coords
-            //   • teleport back to that exact pad (one block up so you land on it)
-            int ox = originData.getInt("x");
-            int oy = originData.getInt("y");
-            int oz = originData.getInt("z");
-            targetX = ox + 0.5;
-            targetY = oy + 1.0;
-            targetZ = oz + 0.5;
-
-            // clear out the saved data if you like:
-            allData.remove(ORIGIN_DATA_TAG);
-        }
-
-        // do the teleport
-        player.teleportTo(dest,
-                targetX, targetY, targetZ,
-                player.getYRot(), player.getXRot());
-        evt.setCanceled(true);
         evt.setCancellationResult(InteractionResult.SUCCESS);
+        evt.setCanceled(true);
+    }
+
+    private static BlockPos findTopSolidBlock(ServerLevel lvl, int x, int z) {
+        int y = lvl.getHeightmapPos(
+                Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                new BlockPos(x, 0, z)
+        ).getY();
+        return new BlockPos(x, y, z);
     }
 }

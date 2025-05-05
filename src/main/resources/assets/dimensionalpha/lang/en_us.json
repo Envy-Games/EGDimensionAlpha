@@ -1,4 +1,11 @@
 {
   "itemGroup.dimensionalpha.dimension_alpha_tab": "Dimension Alpha",
-  "block.dimensionalpha.dimension_alpha_teleporter": "Dimension Alpha Teleport Pad"
+  "block.dimensionalpha.dimension_alpha_teleporter": "Dimension Alpha Teleport Pad",
+  "block.dimensionalpha.netherrack_coal_ore": "Netherrack Coal Ore",
+  "block.dimensionalpha.netherrack_copper_ore": "Netherrack Copper Ore",
+  "block.dimensionalpha.netherrack_diamond_ore": "Netherrack Diamond Ore",
+  "block.dimensionalpha.netherrack_emerald_ore": "Netherrack Emerald Ore",
+  "block.dimensionalpha.netherrack_iron_ore": "Netherrack Iron Ore",
+  "block.dimensionalpha.netherrack_redstone_ore": "Netherrack Redstone Ore",
+  "block.dimensionalpha.netherrack_lapis_ore": "Netherrack Lapis Lazuli Ore"
 }

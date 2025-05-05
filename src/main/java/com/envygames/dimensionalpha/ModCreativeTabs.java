@@ -17,6 +17,13 @@ public class ModCreativeTabs {
                             .icon(() -> ModBlocks.DIMENSION_ALPHA_TELEPORTER_ITEM.get().getDefaultInstance())
                             .displayItems((parameters, output) -> {
                                 output.accept(ModBlocks.DIMENSION_ALPHA_TELEPORTER_ITEM.get());
+                                output.accept(ModBlocks.NETHERRACK_COAL_ORE_ITEM.get());
+                                output.accept(ModBlocks.NETHERRACK_COPPER_ORE_ITEM.get());
+                                output.accept(ModBlocks.NETHERRACK_DIAMOND_ORE_ITEM.get());
+                                output.accept(ModBlocks.NETHERRACK_EMERALD_ORE_ITEM.get());
+                                output.accept(ModBlocks.NETHERRACK_LAPIS_ORE_ITEM.get());
+                                output.accept(ModBlocks.NETHERRACK_IRON_ORE_ITEM.get());
+                                output.accept(ModBlocks.NETHERRACK_REDSTONE_ORE_ITEM.get());
                             })
                             .build()
             );

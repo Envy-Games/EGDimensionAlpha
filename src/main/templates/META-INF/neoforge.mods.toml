@@ -9,9 +9,17 @@ showAsDataPack  = false
 [[mods]]
 modId           = "dimensionalpha"
 version         = "1.0.0"
-displayName     = "Dimension Alpha Teleporter"
+displayName     = "Dimension Alpha: Resource World"
 description     = '''
-Adds a simple teleportation block that shuttles you between the Overworld
-and your custom Dimension Alpha.
+This mod adds a new dimension: Dimension Alpha.
+Dimension Alpha is a custom resource dimension that is extremely resource heavy.
+This mod adds in netherrack variants of vanilla ores. They generate in both DA and the Nether.
 '''
 authors         = "Envy Games"
+
+[[dependencies.dimensionalpha]]
+modId="egores"
+mandatory=false
+versionRange="1.0.0"
+ordering="NONE"
+side="BOTH"

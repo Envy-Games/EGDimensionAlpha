@@ -11,6 +11,8 @@
     "dimensionalpha:lapis_ore",
     "dimensionalpha:diamond_ore",
     "dimensionalpha:nether_quartz_ore",
-    "dimensionalpha:ancient_debris"
+    "dimensionalpha:ancient_debris",
+    "dimensionalpha:nether_gold_ore",
+    "dimensionalpha:emerald_ore"
   ]
 }

@@ -1,0 +1,23 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "dimensionalpha:eg_surface",
+  "step": "underground_ores",
+  "features": [
+    "dimensionalpha:red_terracotta_ore",
+    "dimensionalpha:orange_terracotta_ore",
+    "dimensionalpha:yellow_terracotta_ore",
+    "dimensionalpha:brown_terracotta_ore",
+    "dimensionalpha:white_terracotta_ore",
+    "dimensionalpha:light_gray_terracotta_ore",
+    "dimensionalpha:green_terracotta_ore",
+    "dimensionalpha:blue_terracotta_ore",
+    "dimensionalpha:magenta_terracotta_ore",
+    "dimensionalpha:light_blue_terracotta_ore",
+    "dimensionalpha:lime_terracotta_ore",
+    "dimensionalpha:pink_terracotta_ore",
+    "dimensionalpha:gray_terracotta_ore",
+    "dimensionalpha:cyan_terracotta_ore",
+    "dimensionalpha:purple_terracotta_ore",
+    "dimensionalpha:black_terracotta_ore"
+  ]
+}

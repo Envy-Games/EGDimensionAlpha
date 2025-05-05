@@ -21,6 +21,15 @@
         "state": {
           "Name": "minecraft:deepslate_lapis_ore"
         }
+      },
+      {
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "minecraft:base_stone_nether"
+        },
+        "state": {
+          "Name": "dimensionalpha:netherrack_lapis_ore"
+        }
       }
     ]
   }

@@ -1,8 +1,6 @@
 {
   "type": "neoforge:add_features",
-
   "biomes": "dimensionalpha:eg_surface",
-
   "features": [
     "dimensionalpha:ore_coal",
     "dimensionalpha:ore_iron",
@@ -12,7 +10,15 @@
     "dimensionalpha:ore_diamond",
     "dimensionalpha:ore_lapis",
     "dimensionalpha:nether_quartz_ore",
-    "dimensionalpha:ancient_debris"
+    "dimensionalpha:ancient_debris",
+    "dimensionalpha:netherrack_coal_ore",
+    "dimensionalpha:netherrack_copper_ore",
+    "dimensionalpha:netherrack_diamond_ore",
+    "dimensionalpha:netherrack_emerald_ore",
+    "dimensionalpha:netherrack_iron_ore",
+    "dimensionalpha:netherrack_lapis_ore",
+    "dimensionalpha:netherrack_redstone_ore",
+    "dimensionalpha:red_terracotta_ore"
   ],
 
   "step": "underground_ores"
