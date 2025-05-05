@@ -1,11 +1,12 @@
 {
   "parent": "minecraft:block/cube",
   "textures": {
-    "down":  "dimensionalpha:block/dimension_alpha_teleporter_bottom",
-    "up":    "dimensionalpha:block/dimension_alpha_teleporter_top",
-    "north": "dimensionalpha:block/dimension_alpha_teleporter_side",
-    "south": "dimensionalpha:block/dimension_alpha_teleporter_side",
-    "east":  "dimensionalpha:block/dimension_alpha_teleporter_side",
-    "west":  "dimensionalpha:block/dimension_alpha_teleporter_side"
+    "down":    "dimensionalpha:block/dimension_alpha_teleporter_bottom",
+    "up":      "dimensionalpha:block/dimension_alpha_teleporter_top",
+    "north":   "dimensionalpha:block/dimension_alpha_teleporter_side",
+    "south":   "dimensionalpha:block/dimension_alpha_teleporter_side",
+    "east":    "dimensionalpha:block/dimension_alpha_teleporter_side",
+    "west":    "dimensionalpha:block/dimension_alpha_teleporter_side",
+    "particle":"dimensionalpha:block/dimension_alpha_teleporter_side"
   }
 }

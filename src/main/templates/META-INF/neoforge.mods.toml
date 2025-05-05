@@ -19,7 +19,7 @@ authors         = "Envy Games"
 
 [[dependencies.dimensionalpha]]
 modId="egores"
-mandatory=false
+mandatory=true
 versionRange="1.0.0"
 ordering="NONE"
 side="BOTH"
