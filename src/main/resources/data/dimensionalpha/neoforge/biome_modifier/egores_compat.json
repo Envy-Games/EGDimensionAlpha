@@ -1,9 +1,8 @@
 {
   "type": "neoforge:add_features",
   "biomes": "dimensionalpha:eg_surface",
+  "step": "underground_ores",
   "features": [
     "egores:silver_ore"
-  ],
-
-  "step": "underground_ores"
+  ]
 }
