@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 
 
 public class ModBlocks {
-    // Create specialized registers under your modid
+    // Create specialized registers under the dimensionalpha modid via DeferredRegister
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks("dimensionalpha");
     public static final DeferredRegister.Items  ITEMS  = DeferredRegister.createItems ("dimensionalpha");
 

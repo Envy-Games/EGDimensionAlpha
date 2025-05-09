@@ -13,7 +13,7 @@ public final class ModBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES =
             DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, "dimensionalpha");
 
-    /** Our teleporter BE */
+    /** This is what a block entity register "DeferredHolder" looks like. This hooks into the main mod class. */
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<TeleporterBlockEntity>> TELEPORTER =
             BLOCK_ENTITY_TYPES.register(
                     "dimension_alpha_teleporter",
