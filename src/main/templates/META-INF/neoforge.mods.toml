@@ -1,25 +1,27 @@
 # Non-mod-specific properties
-modLoader       = "javafml"
-loaderVersion   = "[1,)"
-license         = "MIT"
+modLoader          = "javafml"
+loaderVersion      = "[1,)"
+license            = "All Rights Reserved"
 showAsResourcePack = false
-showAsDataPack  = false
+showAsDataPack     = false
 
-# Your mod’s entry
 [[mods]]
-modId           = "dimensionalpha"
-version         = "1.0.0"
-displayName     = "Dimension Alpha: Resource World"
-description     = '''
+modId       = "dimensionalpha"
+version     = "1.0.0"
+displayName = "Dimension Alpha: Resource World"
+description = """
 This mod adds a new dimension: Dimension Alpha.
 Dimension Alpha is a custom resource dimension that is extremely resource heavy.
 This mod adds in netherrack variants of vanilla ores. They generate in both DA and the Nether.
-'''
-authors         = "Envy Games"
+"""
+authors = "Envy Games"
 
+# Dependencies for dimensionalpha
+#  1) NeoForge itself
+#  2) EGOres compatibility (optional)
 [[dependencies.dimensionalpha]]
-modId="egores"
-mandatory=true
-versionRange="1.0.0"
-ordering="NONE"
-side="BOTH"
+modId       = "neoforge"
+mandatory   = true
+versionRange= "[21,)"
+ordering    = "NONE"
+side        = "BOTH"

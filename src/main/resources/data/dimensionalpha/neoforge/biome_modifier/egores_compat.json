@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "egores"
+    }
+  ],
   "type": "neoforge:add_features",
   "biomes": "dimensionalpha:eg_surface",
   "step": "underground_ores",
