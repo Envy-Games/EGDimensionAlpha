@@ -1,4 +1,6 @@
-MIT License
+The dimension alpha mod currently falls under "ALL RIGHTS RESERVED".
+
+The Neoforge MDK falls under the MIT License:
 
 Copyright (c) 2023 NeoForged project
 
