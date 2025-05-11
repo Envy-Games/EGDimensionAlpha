@@ -65,6 +65,11 @@
     "dimensionalpha:brown_concrete_powder_ore",
     "dimensionalpha:green_concrete_powder_ore",
     "dimensionalpha:red_concrete_powder_ore",
-    "dimensionalpha:black_concrete_powder_ore"
+    "dimensionalpha:black_concrete_powder_ore",
+    "dimensionalpha:coarse_dirt_ore",
+    "dimensionalpha:rooted_dirt_ore",
+    "dimensionalpha:podzol_ore",
+    "dimensionalpha:clay_ore",
+    "dimensionalpha:mud_ore"
   ]
 }
