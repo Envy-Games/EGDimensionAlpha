@@ -70,6 +70,10 @@
     "dimensionalpha:rooted_dirt_ore",
     "dimensionalpha:podzol_ore",
     "dimensionalpha:clay_ore",
-    "dimensionalpha:mud_ore"
+    "dimensionalpha:mud_ore",
+    "dimensionalpha:endstone_coal_ore",
+    "dimensionalpha:endstone_iron_ore",
+    "dimensionalpha:endstone_emerald_ore",
+    "dimensionalpha:endstone_diamond_ore"
   ]
 }

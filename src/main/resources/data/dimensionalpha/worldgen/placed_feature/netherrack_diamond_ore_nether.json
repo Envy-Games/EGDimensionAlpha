@@ -1,7 +1,7 @@
 {
   "feature": "dimensionalpha:netherrack_diamond_ore_nether",
   "placement": [
-    { "type": "minecraft:count",      "count": 8                    },
+    { "type": "minecraft:count",      "count": 6                    },
     { "type": "minecraft:in_square"                                 },
     {
       "type": "minecraft:height_range",

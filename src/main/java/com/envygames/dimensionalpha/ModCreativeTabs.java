@@ -24,6 +24,10 @@ public class ModCreativeTabs {
                                 output.accept(ModBlocks.NETHERRACK_LAPIS_ORE_ITEM.get());
                                 output.accept(ModBlocks.NETHERRACK_IRON_ORE_ITEM.get());
                                 output.accept(ModBlocks.NETHERRACK_REDSTONE_ORE_ITEM.get());
+                                output.accept(ModBlocks.ENDSTONE_COAL_ORE_ITEM.get());
+                                output.accept(ModBlocks.ENDSTONE_IRON_ORE_ITEM.get());
+                                output.accept(ModBlocks.ENDSTONE_EMERALD_ORE_ITEM.get());
+                                output.accept(ModBlocks.ENDSTONE_DIAMOND_ORE_ITEM.get());
                             })
                             .build()
             );

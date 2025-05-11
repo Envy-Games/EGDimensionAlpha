@@ -7,6 +7,10 @@
     "dimensionalpha:netherrack_emerald_ore",
     "dimensionalpha:netherrack_iron_ore",
     "dimensionalpha:netherrack_lapis_ore",
-    "dimensionalpha:netherrack_redstone_ore"
+    "dimensionalpha:netherrack_redstone_ore",
+    "dimensionalpha:endstone_coal_ore",
+    "dimensionalpha:endstone_iron_ore",
+    "dimensionalpha:endstone_emerald_ore",
+    "dimensionalpha:endstone_diamond_ore"
   ]
 }

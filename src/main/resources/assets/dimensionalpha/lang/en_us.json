@@ -7,5 +7,9 @@
   "block.dimensionalpha.netherrack_emerald_ore": "Netherrack Emerald Ore",
   "block.dimensionalpha.netherrack_iron_ore": "Netherrack Iron Ore",
   "block.dimensionalpha.netherrack_redstone_ore": "Netherrack Redstone Ore",
-  "block.dimensionalpha.netherrack_lapis_ore": "Netherrack Lapis Lazuli Ore"
+  "block.dimensionalpha.netherrack_lapis_ore": "Netherrack Lapis Lazuli Ore",
+  "block.dimensionalpha.endstone_coal_ore": "Endstone Coal Ore",
+  "block.dimensionalpha.endstone_iron_ore": "Endstone Iron Ore",
+  "block.dimensionalpha.endstone_emerald_ore": "Endstone Emerald Ore",
+  "block.dimensionalpha.endstone_diamond_ore": "Endstone Diamond Ore"
 }

@@ -1,0 +1,11 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_end",
+  "step": "underground_ores",
+  "features": [
+    "dimensionalpha:endstone_coal_ore",
+    "dimensionalpha:endstone_iron_ore",
+    "dimensionalpha:endstone_emerald_ore",
+    "dimensionalpha:endstone_diamond_ore"
+  ]
+}
