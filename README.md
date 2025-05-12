@@ -23,7 +23,7 @@ Each of these material layers generates rich veins of ores or resources to strea
 **Added Blocks:**
 Teleportation Pad: A pair of linked pads that share X and Z coordinates between your overworld and the Dimension Alpha world. Breaking one pad automatically removes its partner so you’re never left with a stranded portal.  
 
-**Vanilla Ore Variants: ** 
+**Vanilla Ore Variants:** 
 In Netherrack: Coal, Copper, Diamond, Emerald, Iron, Lapis, Redstone  
 In End Stone: Coal, Diamond, Emerald, Iron  
 
@@ -41,4 +41,4 @@ Additional Resources:
 ==========
 Community Documentation: https://docs.neoforged.net/  
 NeoForged Discord: https://discord.neoforged.net/
-Texture Viewing from Github: https://oparisblue.github.io/minecraft-textures-viewer/
+Texture Viewer: https://oparisblue.github.io/minecraft-textures-viewer/
