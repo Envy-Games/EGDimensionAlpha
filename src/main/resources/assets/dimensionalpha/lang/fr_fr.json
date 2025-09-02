@@ -1,0 +1,15 @@
+{
+  "itemGroup.dimensionalpha.dimension_alpha_tab": "Dimension Alpha",
+  "block.dimensionalpha.dimension_alpha_teleporter": "Plateforme de téléportation de la Dimension Alpha",
+  "block.dimensionalpha.netherrack_coal_ore": "Minerai de charbon du Nether",
+  "block.dimensionalpha.netherrack_copper_ore": "Minerai de cuivre du Nether",
+  "block.dimensionalpha.netherrack_diamond_ore": "Minerai de diamant du Nether",
+  "block.dimensionalpha.netherrack_emerald_ore": "Minerai d’émeraude du Nether",
+  "block.dimensionalpha.netherrack_iron_ore": "Minerai de fer du Nether",
+  "block.dimensionalpha.netherrack_redstone_ore": "Minerai de redstone du Nether",
+  "block.dimensionalpha.netherrack_lapis_ore": "Minerai de lapis-lazuli du Nether",
+  "block.dimensionalpha.endstone_coal_ore": "Minerai de charbon de l’End",
+  "block.dimensionalpha.endstone_iron_ore": "Minerai de fer de l’End",
+  "block.dimensionalpha.endstone_emerald_ore": "Minerai d’émeraude de l’End",
+  "block.dimensionalpha.endstone_diamond_ore": "Minerai de diamant de l’End"
+}

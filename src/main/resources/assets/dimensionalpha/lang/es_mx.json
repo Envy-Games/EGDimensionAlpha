@@ -1,0 +1,15 @@
+{
+  "itemGroup.dimensionalpha.dimension_alpha_tab": "Dimensión Alfa",
+  "block.dimensionalpha.dimension_alpha_teleporter": "Plataforma de teletransporte de la Dimensión Alfa",
+  "block.dimensionalpha.netherrack_coal_ore": "Mena de carbón del Nether",
+  "block.dimensionalpha.netherrack_copper_ore": "Mena de cobre del Nether",
+  "block.dimensionalpha.netherrack_diamond_ore": "Mena de diamante del Nether",
+  "block.dimensionalpha.netherrack_emerald_ore": "Mena de esmeralda del Nether",
+  "block.dimensionalpha.netherrack_iron_ore": "Mena de hierro del Nether",
+  "block.dimensionalpha.netherrack_redstone_ore": "Mena de redstone del Nether",
+  "block.dimensionalpha.netherrack_lapis_ore": "Mena de lapislázuli del Nether",
+  "block.dimensionalpha.endstone_coal_ore": "Mena de carbón del End",
+  "block.dimensionalpha.endstone_iron_ore": "Mena de hierro del End",
+  "block.dimensionalpha.endstone_emerald_ore": "Mena de esmeralda del End",
+  "block.dimensionalpha.endstone_diamond_ore": "Mena de diamante del End"
+}
