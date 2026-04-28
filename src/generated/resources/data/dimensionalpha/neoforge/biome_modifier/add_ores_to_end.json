@@ -1,0 +1,12 @@
+{
+  "type": "dimensionalpha:configurable_add_features",
+  "biomes": "#minecraft:is_end",
+  "config_gate": "end_realm_ores",
+  "features": [
+    "dimensionalpha:endstone_coal_ore",
+    "dimensionalpha:endstone_iron_ore",
+    "dimensionalpha:endstone_emerald_ore",
+    "dimensionalpha:endstone_diamond_ore"
+  ],
+  "step": "underground_ores"
+}

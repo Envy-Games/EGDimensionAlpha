@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "dimensionalpha:block/endstone_iron_ore"
-  }
-}

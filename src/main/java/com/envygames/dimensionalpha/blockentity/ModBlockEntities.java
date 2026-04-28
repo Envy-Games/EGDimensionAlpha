@@ -1,5 +1,6 @@
 package com.envygames.dimensionalpha.blockentity;
 
+import com.envygames.dimensionalpha.DimensionalphaMod;
 import com.envygames.dimensionalpha.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -11,7 +12,7 @@ public final class ModBlockEntities {
 
     /** Single deferred register that targets the vanilla BLOCK_ENTITY_TYPE registry */
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES =
-            DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, "dimensionalpha");
+            DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, DimensionalphaMod.MOD_ID);
 
     /** This is what a block entity register "DeferredHolder" looks like. This hooks into the main mod class. */
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<TeleporterBlockEntity>> TELEPORTER =

@@ -1,0 +1,25 @@
+{
+  "type": "dimensionalpha:configurable_add_features",
+  "biomes": "dimensionalpha:eg_surface",
+  "config_gate": "dimension_alpha_nether_resources",
+  "features": [
+    "dimensionalpha:nether_quartz_ore",
+    "dimensionalpha:ancient_debris",
+    "dimensionalpha:nether_gold_ore",
+    "dimensionalpha:netherrack_coal_ore_nether",
+    "dimensionalpha:netherrack_copper_ore_nether",
+    "dimensionalpha:netherrack_diamond_ore_nether",
+    "dimensionalpha:netherrack_emerald_ore_nether",
+    "dimensionalpha:netherrack_iron_ore_nether",
+    "dimensionalpha:netherrack_lapis_ore_nether",
+    "dimensionalpha:netherrack_redstone_ore_nether",
+    "dimensionalpha:gilded_blackstone",
+    "dimensionalpha:raw_gold_block",
+    "dimensionalpha:quartz_block",
+    "dimensionalpha:basalt_block",
+    "dimensionalpha:smooth_basalt_block",
+    "dimensionalpha:polished_basalt_block",
+    "dimensionalpha:crying_obsidian_block"
+  ],
+  "step": "underground_ores"
+}

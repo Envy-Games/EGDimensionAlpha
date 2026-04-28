@@ -11,5 +11,15 @@
   "block.dimensionalpha.endstone_coal_ore": "Endstone Coal Ore",
   "block.dimensionalpha.endstone_iron_ore": "Endstone Iron Ore",
   "block.dimensionalpha.endstone_emerald_ore": "Endstone Emerald Ore",
-  "block.dimensionalpha.endstone_diamond_ore": "Endstone Diamond Ore"
+  "block.dimensionalpha.endstone_diamond_ore": "Endstone Diamond Ore",
+  "dimensionalpha.configuration.teleporter.alpha_teleporter_y": "Dimension Alpha teleporter Y level",
+  "dimensionalpha.configuration.teleporter.overworld_search_radius": "Overworld return search radius",
+  "dimensionalpha.configuration.teleporter.remove_linked_teleporter_on_break": "Remove linked teleporter on break",
+  "dimensionalpha.configuration.generation.dimension_alpha_overworld_resources": "Dimension Alpha Overworld resources",
+  "dimensionalpha.configuration.generation.dimension_alpha_nether_resources": "Dimension Alpha Nether resources",
+  "dimensionalpha.configuration.generation.dimension_alpha_end_resources": "Dimension Alpha End resources",
+  "dimensionalpha.configuration.generation.nether_realm_ores": "Nether realm ore generation",
+  "dimensionalpha.configuration.generation.end_realm_ores": "End realm ore generation",
+  "dimensionalpha.configuration.generation.dimension_alpha_external_resources": "Dimension Alpha integration resources",
+  "jei.dimensionalpha.dimension_alpha_teleporter.description": "Right-click a placed teleporter to enter Dimension Alpha. The first use creates and links a matching destination pad, and using either linked pad returns you to the other realm."
 }

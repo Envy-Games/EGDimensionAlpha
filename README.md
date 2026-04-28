@@ -34,8 +34,7 @@ Join our Discord for support and updates: https://discord.gg/neQKm6rEYh
 **Credits:**
 ==========
 Envy Games/StyEnvy or Styanatos (developer)  
-Envy Games/Noqz or Noqqerz (art)  
-malcolmriley (teleport pad texture)
+Envy Games/Noqz or Noqqerz (art)
 
 Additional Resources: 
 ==========

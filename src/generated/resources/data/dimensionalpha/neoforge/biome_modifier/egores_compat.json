@@ -1,0 +1,15 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "egores"
+    }
+  ],
+  "type": "dimensionalpha:configurable_add_features",
+  "biomes": "dimensionalpha:eg_surface",
+  "config_gate": "dimension_alpha_external_resources",
+  "features": [
+    "egores:silver_ore"
+  ],
+  "step": "underground_ores"
+}

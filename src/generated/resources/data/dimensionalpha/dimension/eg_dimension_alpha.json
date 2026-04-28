@@ -1,0 +1,78 @@
+{
+  "type": "dimensionalpha:eg_dimension_alpha",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "biome": "dimensionalpha:eg_surface",
+      "features": true,
+      "lakes": false,
+      "layers": [
+        {
+          "block": "minecraft:bedrock",
+          "height": 1
+        },
+        {
+          "block": "minecraft:obsidian",
+          "height": 5
+        },
+        {
+          "block": "minecraft:gravel",
+          "height": 10
+        },
+        {
+          "block": "minecraft:dirt",
+          "height": 10
+        },
+        {
+          "block": "minecraft:sand",
+          "height": 10
+        },
+        {
+          "block": "minecraft:red_sand",
+          "height": 10
+        },
+        {
+          "block": "minecraft:calcite",
+          "height": 15
+        },
+        {
+          "block": "minecraft:tuff",
+          "height": 15
+        },
+        {
+          "block": "minecraft:blackstone",
+          "height": 15
+        },
+        {
+          "block": "minecraft:terracotta",
+          "height": 10
+        },
+        {
+          "block": "minecraft:end_stone",
+          "height": 20
+        },
+        {
+          "block": "minecraft:netherrack",
+          "height": 71
+        },
+        {
+          "block": "minecraft:deepslate",
+          "height": 71
+        },
+        {
+          "block": "minecraft:stone",
+          "height": 70
+        },
+        {
+          "block": "minecraft:grass_block",
+          "height": 1
+        },
+        {
+          "block": "minecraft:air",
+          "height": 50
+        }
+      ],
+      "structure_overrides": "minecraft:villages"
+    }
+  }
+}

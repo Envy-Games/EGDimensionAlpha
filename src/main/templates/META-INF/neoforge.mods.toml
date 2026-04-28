@@ -1,27 +1,35 @@
 # Non-mod-specific properties
 modLoader          = "javafml"
-loaderVersion      = "[1,)"
-license            = "All Rights Reserved"
+loaderVersion      = "${loader_version_range}"
+license            = "${mod_license}"
 showAsResourcePack = false
 showAsDataPack     = false
 
 [[mods]]
-modId       = "dimensionalpha"
-version     = "1.0.0"
-displayName = "Dimension Alpha: Resource World"
-description = """
-This mod adds a new dimension: Dimension Alpha.
-Dimension Alpha is a custom resource dimension that is extremely resource heavy.
-This mod adds in netherrack variants of vanilla ores. They generate in both DA and the Nether.
-"""
-authors = "Envy Games"
+modId       = "${mod_id}"
+version     = "${mod_version}"
+displayName = "${mod_name}"
+description = '''${mod_description}'''
+authors     = "${mod_authors}"
 
-# Dependencies for dimensionalpha
-#  1) NeoForge itself
-#  2) EGOres compatibility (optional)
-[[dependencies.dimensionalpha]]
+# Dependencies for ${mod_id}
+[[dependencies.${mod_id}]]
 modId       = "neoforge"
-mandatory   = true
-versionRange= "[21,)"
+type        = "required"
+versionRange= "${neo_version_range}"
 ordering    = "NONE"
 side        = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId       = "minecraft"
+type        = "required"
+versionRange= "${minecraft_version_range}"
+ordering    = "NONE"
+side        = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId       = "jei"
+type        = "optional"
+versionRange= "[19.0.0,)"
+ordering    = "AFTER"
+side        = "CLIENT"

@@ -1,0 +1,15 @@
+{
+  "type": "dimensionalpha:configurable_add_features",
+  "biomes": "#minecraft:is_nether",
+  "config_gate": "nether_realm_ores",
+  "features": [
+    "dimensionalpha:netherrack_coal_ore_nether",
+    "dimensionalpha:netherrack_copper_ore_nether",
+    "dimensionalpha:netherrack_diamond_ore_nether",
+    "dimensionalpha:netherrack_emerald_ore_nether",
+    "dimensionalpha:netherrack_iron_ore_nether",
+    "dimensionalpha:netherrack_lapis_ore_nether",
+    "dimensionalpha:netherrack_redstone_ore_nether"
+  ],
+  "step": "underground_ores"
+}

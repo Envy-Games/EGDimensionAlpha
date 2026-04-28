@@ -1,6 +1,8 @@
 package com.envygames.dimensionalpha.block;
 
+import com.envygames.dimensionalpha.DimensionalphaMod;
 import com.envygames.dimensionalpha.blockentity.TeleporterBlockEntity;
+import com.envygames.dimensionalpha.config.DimensionalphaConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
@@ -20,7 +22,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Objects;
 
 public class DimensionAlphaTeleporterBlock extends Block implements EntityBlock {
-    private static final Logger LOGGER = LogManager.getLogger("Dimensionalpha");
+    private static final Logger LOGGER = LogManager.getLogger(DimensionalphaMod.MOD_ID);
 
     public DimensionAlphaTeleporterBlock(BlockBehaviour.Properties props) {
         super(props);
@@ -44,53 +46,58 @@ public class DimensionAlphaTeleporterBlock extends Block implements EntityBlock 
                          BlockState newState,
                          boolean isMoving) {
         try {
-            // Only act when the block actually changes (Minecraft convention)…
-            if (!oldState.is(newState.getBlock())) {
-                // …and only on the server to avoid client-side duplication / NPEs.
-                if (!world.isClientSide) {
-                    BlockEntity be = world.getBlockEntity(pos);
-                    if (be instanceof TeleporterBlockEntity tbe) {
-                        final ResourceKey<Level> partnerDim = tbe.linkedDimension();
-                        final BlockPos           partnerPos = tbe.linkedPosition();
+            if (oldState.is(newState.getBlock()) || world.isClientSide) {
+                return;
+            }
 
-                        LOGGER.info("Teleporter broken at {} in {}, clearing its link to {} at {}",
-                                pos, world.dimension(), partnerDim, partnerPos);
-                        tbe.clearLink();
+            BlockEntity be = world.getBlockEntity(pos);
+            if (!(be instanceof TeleporterBlockEntity tbe)) {
+                return;
+            }
 
-                        if (partnerDim != null && partnerPos != null) {
-                            ServerLevel destWorld = Objects.requireNonNull(world.getServer()).getLevel(partnerDim);
-                            if (destWorld != null) {
-                                // Avoid force-loading: only operate if the chunk is present
-                                if (destWorld.isLoaded(partnerPos)) {
-                                    BlockEntity partnerBE = destWorld.getBlockEntity(partnerPos);
-                                    if (partnerBE instanceof TeleporterBlockEntity ptbe) {
-                                        LOGGER.info("Clearing link on partner teleporter at {} in {}", partnerPos, partnerDim);
-                                        ptbe.clearLink();
+            ResourceKey<Level> partnerDim = tbe.linkedDimension();
+            BlockPos partnerPos = tbe.linkedPosition();
 
-                                        // Only remove the partner block if it's actually the teleporter
-                                        BlockState partnerState = destWorld.getBlockState(partnerPos);
-                                        if (partnerState.getBlock() instanceof DimensionAlphaTeleporterBlock
-                                            // or: partnerState.is(ModBlocks.TELEPORTER.get())
-                                        ) {
-                                            destWorld.setBlockAndUpdate(partnerPos, Blocks.AIR.defaultBlockState());
-                                            LOGGER.info("Removed partner teleporter block at {} in {}", partnerPos, partnerDim);
-                                        } else {
-                                            LOGGER.warn("Partner at {} in {} is not a teleporter block; skipping removal",
-                                                    partnerPos, partnerDim);
-                                        }
-                                    } else {
-                                        LOGGER.warn("No teleporter BE found at partner pos {} in {}", partnerPos, partnerDim);
-                                    }
-                                } else {
-                                    LOGGER.warn("Partner chunk not loaded at {} in {}; skipping partner cleanup to avoid force-load",
-                                            partnerPos, partnerDim);
-                                }
-                            } else {
-                                LOGGER.warn("Could not access partner dimension {}", partnerDim);
-                            }
-                        }
-                    }
-                }
+            LOGGER.info("Teleporter broken at {} in {}, clearing its link to {} at {}",
+                    pos, world.dimension(), partnerDim, partnerPos);
+            tbe.clearLink();
+
+            if (partnerDim == null || partnerPos == null) {
+                return;
+            }
+
+            ServerLevel destWorld = Objects.requireNonNull(world.getServer()).getLevel(partnerDim);
+            if (destWorld == null) {
+                LOGGER.warn("Could not access partner dimension {}", partnerDim);
+                return;
+            }
+
+            if (!destWorld.isLoaded(partnerPos)) {
+                LOGGER.warn("Partner chunk not loaded at {} in {}; skipping partner cleanup to avoid force-load",
+                        partnerPos, partnerDim);
+                return;
+            }
+
+            BlockEntity partnerBE = destWorld.getBlockEntity(partnerPos);
+            if (!(partnerBE instanceof TeleporterBlockEntity ptbe)) {
+                LOGGER.warn("No teleporter BE found at partner pos {} in {}", partnerPos, partnerDim);
+                return;
+            }
+
+            LOGGER.info("Clearing link on partner teleporter at {} in {}", partnerPos, partnerDim);
+            ptbe.clearLink();
+
+            if (!DimensionalphaConfig.removeLinkedTeleporterOnBreak()) {
+                return;
+            }
+
+            BlockState partnerState = destWorld.getBlockState(partnerPos);
+            if (partnerState.getBlock() instanceof DimensionAlphaTeleporterBlock) {
+                destWorld.setBlockAndUpdate(partnerPos, Blocks.AIR.defaultBlockState());
+                LOGGER.info("Removed partner teleporter block at {} in {}", partnerPos, partnerDim);
+            } else {
+                LOGGER.warn("Partner at {} in {} is not a teleporter block; skipping removal",
+                        partnerPos, partnerDim);
             }
         } finally {
             super.onRemove(oldState, world, pos, newState, isMoving);

@@ -8,7 +8,7 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class ModCreativeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, "dimensionalpha");
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, DimensionalphaMod.MOD_ID);
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> DIMENSION_ALPHA_TAB =
             CREATIVE_TABS.register("dimension_alpha_tab", () ->

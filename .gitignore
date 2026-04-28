@@ -22,6 +22,8 @@ eclipse
 run
 runs
 run-data
+run-smoke
 
 repo
 libs
+src/generated/resources/.cache/
