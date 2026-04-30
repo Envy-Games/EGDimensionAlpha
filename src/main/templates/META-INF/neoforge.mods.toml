@@ -28,6 +28,13 @@ ordering    = "NONE"
 side        = "BOTH"
 
 [[dependencies.${mod_id}]]
+modId       = "geckolib"
+type        = "required"
+versionRange= "${geckolib_version_range}"
+ordering    = "AFTER"
+side        = "BOTH"
+
+[[dependencies.${mod_id}]]
 modId       = "jei"
 type        = "optional"
 versionRange= "[19.0.0,)"

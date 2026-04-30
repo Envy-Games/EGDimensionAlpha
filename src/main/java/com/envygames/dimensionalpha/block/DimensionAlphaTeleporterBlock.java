@@ -36,7 +36,7 @@ public class DimensionAlphaTeleporterBlock extends Block implements EntityBlock 
 
     @Override
     public @NotNull RenderShape getRenderShape(@NotNull BlockState state) {
-        return RenderShape.MODEL;
+        return RenderShape.ENTITYBLOCK_ANIMATED;
     }
 
     @Override
