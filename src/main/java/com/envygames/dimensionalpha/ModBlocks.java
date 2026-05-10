@@ -23,10 +23,10 @@ public class ModBlocks {
                     "dimension_alpha_teleporter",
                     () -> new DimensionAlphaTeleporterBlock(
                             BlockBehaviour.Properties.of()
-                                    .destroyTime(50.0f)           // obsidian‑like
+                                    .destroyTime(50.0f)           // obsidian-like
                                     .explosionResistance(1200.0f)
                                     .sound(SoundType.METAL)
-                                    .lightLevel(s -> 15)          // full‑bright
+                                    .lightLevel(s -> 15)          // full-bright
                     )
             );
 
@@ -38,7 +38,7 @@ public class ModBlocks {
                             .destroyTime(3.0f)                       // same as minecraft:coal_ore
                             .explosionResistance(3.0f)               // same as vanilla ores?
                             .requiresCorrectToolForDrops()           // Links to tags/block/tool.json to set tool type
-                            .lootFrom(() -> Blocks.COAL_ORE)         // copy coal‐ore’s loot table (drops coal + Fortune) :contentReference[oaicite:0]{index=0}
+                            .lootFrom(() -> Blocks.COAL_ORE)         // copy coal ore's loot table (drops coal + Fortune)
                             .sound(SoundType.NETHERRACK)                  // The "ting" noise as its described
     );
 

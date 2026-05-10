@@ -2,6 +2,7 @@ package com.envygames.dimensionalpha;
 
 import com.envygames.dimensionalpha.blockentity.ModBlockEntities;
 import com.envygames.dimensionalpha.config.DimensionalphaConfig;
+import com.envygames.dimensionalpha.data.DataGenerators;
 import com.envygames.dimensionalpha.worldgen.ModBiomeModifierSerializers;
 import net.neoforged.bus.api.IEventBus;
 import net.minecraft.resources.ResourceLocation;
@@ -22,6 +23,8 @@ public class DimensionalphaMod {
         ModBlockEntities.register(modBus);
         ModBiomeModifierSerializers.register(modBus);
         ModCreativeTabs.CREATIVE_TABS.register(modBus);
+
+        modBus.addListener(DataGenerators::gatherData);
     }
 
     public static ResourceLocation id(String path) {
